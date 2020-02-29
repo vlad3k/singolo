@@ -149,6 +149,12 @@ body {
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.2s all ease;
+}
+
+.socials__item:hover {
+  border-color: #f06c64;
+  border-width: 2px;
 }
 
 .socials__item--fb {
