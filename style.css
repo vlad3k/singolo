@@ -175,10 +175,7 @@ body {
   border-bottom-color: #323746;
 }
 
-.section--portfolio {
-  padding-bottom: 66px;
-}
-
+.section--portfolio,
 .section--about-us {
   padding-bottom: 67px;
 }
@@ -319,8 +316,10 @@ body {
 }
 
 .section--portfolio .tags {
-  margin: 12px 0;
+  margin-top: 12px;
+  margin-bottom: 11px;
 }
+
 
 .gallery {
   display: flex;
