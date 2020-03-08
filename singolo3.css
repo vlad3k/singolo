@@ -142,6 +142,10 @@ body {
   line-height: 21.5px;
 }
 
+.contacts__list-item:hover a {
+  text-decoration: underline;
+}
+
 .contacts__list-item::before {
   content: '';
   position: absolute;
