@@ -432,10 +432,14 @@ body {
   background-color: #d6564f;
   border: 0;
   border-radius: 5px;
+  transition: 200ms all ease;
 }
 
 .feedback__field:focus {
-  background-color: #d6564f;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+  border: none;
 }
 
 .feedback__field::placeholder {
@@ -561,4 +565,9 @@ body {
 .btn:hover {
   background-color: #e23e43;
   cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+  border: none;
 }
