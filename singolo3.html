@@ -14,10 +14,11 @@
       <p class="section__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
       <div class="section__feedback">
         <form class="section__form feedback">
-          <input class="feedback__field" type="text" placeholder="Name (Required)">
-          <input class="feedback__field" type="email" placeholder="Email (Required)">
-          <input class="feedback__field" type="text" placeholder="Subject">
+          <input class="feedback__field" type="text" name="name" placeholder="Name (Required)" autocomplete="off">
+          <input class="feedback__field" type="email" name="email" placeholder="Email (Required)" autocomplete="off">
+          <input class="feedback__field" type="text" placeholder="Subject" autocomplete="off">
           <textarea class="feedback__field feedback__field--textarea" placeholder="Describe your project in detail..."></textarea>
+          <button class="btn" type="submit">Submit</button>
         </form>
         <aside class="setciton__form contacts">
           <h3 class="contacts__title">Contact Information</h3>
@@ -45,10 +46,9 @@
       </div>
     </div>
   </section>
-
   <footer class="page-footer">
     <div class="container">
-      <div class="page-footer__copyright">
+      <div class="copyright">
         © Copyright 2013
       </div>
       <div class="socials">

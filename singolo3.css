@@ -60,12 +60,18 @@ body {
   margin-bottom: 0;
 }
 .section--feedback {
+  padding-bottom: 51px;
   color: #f0d8d9;
   background-color: #f06c64;
   border-bottom-color: #ea676b;
 }
 
+.feedback {
+  padding-top: 5px;
+}
+
 .feedback__field {
+  position: relative;
   display: block;
   margin-bottom: 16px;
   padding: 0 15px;
@@ -76,7 +82,11 @@ body {
   color: #f48c8f;
   background-color: #d6564f;
   border: 0;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+
+.feedback__field:focus {
+  background-color: #d6564f;
 }
 
 .feedback__field::placeholder {
@@ -86,7 +96,7 @@ body {
 }
 
 .feedback__field--textarea {
-  padding-top: 10px;
+  padding-top: 7px;
   height: 202px;
   line-height: 22px;
 }
@@ -108,14 +118,15 @@ body {
 }
 
 .contacts__title {
-  margin-bottom: 15px;
+  margin-bottom: 3px;
   font-size: 18px;
 }
 
 .contacts__info {
-  margin-bottom: 30px;
+  margin-top: 0;
+  margin-bottom: 20px;
   font-size: 12px;
-  line-height: 21.5px;
+  line-height: 22px;
 }
 
 .contacts__list {
@@ -150,6 +161,7 @@ body {
 .feedback__field--textarea {
   max-width: 620px;
   width: 100%;
+  resize: none;
 }
 
 .contacts__list-item--location::before {
@@ -174,6 +186,10 @@ body {
   padding-bottom: 22px;
 }
 
+.copyright {
+  font-size: 12px;
+}
+
 .socials {
   display: flex;
   flex-wrap: wrap;
@@ -194,6 +210,10 @@ body {
   transition: 0.2s all ease;
 }
 
+.socials__item:last-child {
+  margin-right: 0;
+}
+
 .socials__item:hover {
   border-color: #f06c64;
   border-width: 2px;
@@ -210,4 +230,20 @@ body {
 }
 .socials__item--in {
   background-image: url(./assets/img/linkedin.png);
+}
+
+.btn {
+  font-family: Lato;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d6564f;
+  color: #f0d8d9;
+  transition: 200ms all ease;
+}
+
+.btn:hover {
+  background-color: #e23e43;
+  cursor: pointer;
 }
