@@ -19,4 +19,17 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   });
 
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const linkTo = document.querySelector(e.target.getAttribute('href')).offsetTop - 95;
+      window.scroll({
+        top: linkTo,
+        left: 0,
+        behavior: 'smooth'
+      });
+    })
+  });
+
 });
+
