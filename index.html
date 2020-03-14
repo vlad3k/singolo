@@ -27,32 +27,32 @@
 <main>
 
   <section class="carousel" id="slider">
-    <div class="container">
-      <div class="carousel__wrapper">
-        <div class="carousel__images">
-          <div class="carousel__img phone-img phone-img--phone-v">
+    <div class="container carousel__wrapper">
+        <div class="carousel__slide carousel__slide--active">
+          <div class="carousel__img phone__img phone__img-phone--v">
             <img src="./assets/img/phone-v.png" alt="picture with vertical phone">
-            <div class="phone-img__area phone-img__area--power-off">
-              <div class="phone-img__screen phone-img__screen--v"></div>
+            <div class="phone__img-area phone__img-area--power-off">
+              <div class="phone__img-screen phone__img-screen--v"></div>
             </div>
           </div>
           <div class="carousel__img">
             <img src="./assets/img/phone-h.png" alt="picture with horizontal phone">
-            <div class="phone-img__area">
-              <div class="phone-img__screen phone-img__screen--h"></div>
+            <div class="phone__img-area">
+              <div class="phone__img-screen phone__img-screen--h"></div>
             </div>
-
           </div>
         </div>
+        <div class="carousel__slide">
+          <img src="./assets/img/slide-2.png" alt="слайд 2">
+        </div>
         <div class="carousel__controls">
-          <button class="carousel__btn" type="button">
+          <button class="carousel__btn" id="prev" type="button">
             Prev
           </button>
-          <button class="carousel__btn carousel__btn--next" type="button">
+          <button class="carousel__btn carousel__btn--next" id="next" type="button">
             Next
           </button>
         </div>
-      </div>
     </div>
   </section>
 

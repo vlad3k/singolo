@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
+
   // Scroll to section
   const navLinks = document.querySelectorAll('.nav__link');
   const sections = document.querySelectorAll('section');
@@ -31,11 +32,63 @@ document.addEventListener('DOMContentLoaded', function(){
     })
   });
 
+  // Slider
+  let items = document.querySelectorAll('.carousel__slide'),
+      currentItem = 0,
+      isEnabled = true,
+      prev = document.querySelector('#prev'),
+      next = document.querySelector('#next');
+
+  function changeCurrentItem(n) {
+    currentItem = (n + items.length) % items.length;
+  }
+
+  function hideItem(direction) {
+    isEnabled = false;
+    items[currentItem].classList.add(direction);
+    items[currentItem].addEventListener('animationend', function () {
+      this.classList.remove('carousel__slide--active', direction);
+    });
+  }
+
+  function showItem(direction) {
+    items[currentItem].classList.add('carousel__slide--next', direction);
+    items[currentItem].addEventListener('animationend', function () {
+      this.classList.remove('carousel__slide--next', direction);
+      this.classList.add('carousel__slide--active');
+      isEnabled = true;
+    });
+  }
+
+  function nextItem(n) {
+    hideItem('to-left');
+    changeCurrentItem(n + 1);
+    showItem('from-right');
+  }
+
+  function previousItem(n) {
+    hideItem('to-right');
+    changeCurrentItem(n - 1);
+    showItem('from-left');
+  }
+
+  prev.addEventListener('click', function () {
+    if (isEnabled) {
+      previousItem(currentItem);
+    }
+  });
+
+  next.addEventListener('click', function () {
+    if (isEnabled) {
+      nextItem(currentItem);
+    }
+  });
+
+
   // Power off/on phones on slider
-  const phones = document.querySelectorAll('.phone-img__area');
-  console.log(phones);
+  const phones = document.querySelectorAll('.phone__img-area');
   phones.forEach(phone => phone.addEventListener('click', () => {
-    phone.classList.toggle('phone-img__area--power-off');
+    phone.classList.toggle('phone__img-area--power-off');
   }));
 
 });

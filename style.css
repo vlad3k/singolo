@@ -110,36 +110,63 @@ body {
 }
 
 .carousel {
-  padding-top: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 600px;
   background-color: #f06c64;
   overflow: hidden;
 }
-
 .carousel__wrapper {
-  position: relative;
-}
-
-.carousel__images {
   position: relative;
   display: flex;
   align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel__slide {
+  position: relative;
+  flex-grow: 1;
   justify-content: center;
+  align-items: center;
+  display: none;
+  margin: 0 auto;
+  animation: 0.5s ease-in-out;
+}
+
+.carousel__slide--active,
+.carousel__slide--next {
+  display: flex;
+}
+
+.carousel__slide--next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
 }
 
 .carousel__img {
   position: relative;
 }
 
-.phone-img--phone-v {
+.phone {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone__img-phone--v {
   margin-right: 72px;
 }
 
-.phone-img__area--power-off .phone-img__screen {
+.phone__img-area--power-off .phone__img-screen {
   display: block;
 }
 
-.phone-img__area {
+.phone__img-area {
   position: absolute;
   top: 0;
   left: 0;
@@ -150,7 +177,7 @@ body {
   cursor: pointer;
 }
 
-.phone-img__screen--v {
+.phone__img-screen--v {
   display: none;
   margin: 65px auto 0;
   width: 189px;
@@ -158,7 +185,7 @@ body {
   background-color: #000000;
 }
 
-.phone-img__screen--h {
+.phone__img-screen--h {
   display: none;
   margin: 14px 60px 0;
   width: 333px;
@@ -204,6 +231,42 @@ body {
   right: -6px;
   transform: rotate(180deg);
   transform-origin: center 7px;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
 }
 
 .section {
