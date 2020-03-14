@@ -127,6 +127,45 @@ body {
   justify-content: center;
 }
 
+.carousel__img {
+  position: relative;
+}
+
+.phone-img--phone-v {
+  margin-right: 72px;
+}
+
+.phone-img__area--power-off .phone-img__screen {
+  display: block;
+}
+
+.phone-img__area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: calc(100% - 25px);
+  height: calc(100% - 33px);
+  border-radius: 27px;
+  cursor: pointer;
+}
+
+.phone-img__screen--v {
+  display: none;
+  margin: 65px auto 0;
+  width: 189px;
+  height: 333px;
+  background-color: #000000;
+}
+
+.phone-img__screen--h {
+  display: none;
+  margin: 14px 60px 0;
+  width: 333px;
+  height: 188px;
+  background-color: #000000;
+}
+
 .carousel__btn {
   position: absolute;
   top: calc(50% - 1px);

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-
+  // Scroll to section
   const navLinks = document.querySelectorAll('.nav__link');
   const sections = document.querySelectorAll('section');
   const sectionMargin = 300;
@@ -30,6 +30,13 @@ document.addEventListener('DOMContentLoaded', function(){
       });
     })
   });
+
+  // Power off/on phones on slider
+  const phones = document.querySelectorAll('.phone-img__area');
+  console.log(phones);
+  phones.forEach(phone => phone.addEventListener('click', () => {
+    phone.classList.toggle('phone-img__area--power-off');
+  }));
 
 });
 
