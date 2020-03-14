@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function(){
   let items = document.querySelectorAll('.carousel__slide'),
       currentItem = 0,
       isEnabled = true,
+      slider = document.querySelector('#slider'),
       prev = document.querySelector('#prev'),
       next = document.querySelector('#next');
 
@@ -52,6 +53,11 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   function showItem(direction) {
+    if (items[currentItem].dataset.area === 'bg') {
+      slider.style.background = '#648BF0';
+    } else {
+      slider.style.background = '#F06C64';
+    }
     items[currentItem].classList.add('carousel__slide--next', direction);
     items[currentItem].addEventListener('animationend', function () {
       this.classList.remove('carousel__slide--next', direction);

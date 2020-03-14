@@ -116,7 +116,9 @@ body {
   height: 600px;
   background-color: #f06c64;
   overflow: hidden;
+  transition: 0.5s background-color ease;
 }
+
 .carousel__wrapper {
   position: relative;
   display: flex;
