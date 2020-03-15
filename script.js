@@ -97,5 +97,37 @@ document.addEventListener('DOMContentLoaded', function(){
     phone.classList.toggle('phone__img-area--power-off');
   }));
 
+  // gallery filter
+  const tags = document.querySelectorAll('.tags__item');
+  const images = document.querySelectorAll('.gallery__image');
+
+  const makeActiveTag = (tag) => tag.classList.add('tags__item--active');
+  const removeActiveTags = () => tags.forEach(tag => removeActiveTag(tag));
+  const removeActiveTag = (tag) => tag.classList.remove('tags__item--active');
+
+
+  tags.forEach(tag => tag.addEventListener('click', function(e) {
+    removeActiveTags();
+    makeActiveTag(e.target);
+    filterContent(e.target.dataset.area);
+  }));
+
+
+  function filterContent(group) {
+    if (group === 'all') {
+      images.forEach(image => image.classList.add('gallery__image--show'));
+    } else {
+      images.forEach(image => image.classList.remove('gallery__image--show'));
+      const imagesByGroup = document.querySelectorAll(`.${group}`);
+      imagesByGroup.forEach(image => image.classList.add('gallery__image--show'));
+    }
+  }
+
+  // Active portfolio image
+  images.forEach(image => image.addEventListener('click', function() {
+    if (image.classList.contains('gallery__image--active')) return;
+    images.forEach(image => image.classList.remove('gallery__image--active'));
+    this.classList.add('gallery__image--active');
+  }))
 });
 
