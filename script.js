@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', function(){
     modal.style.display = 'none';
     modalSubject.innerHTML = 'Без темы';
     modalDescription.innerHTML = 'Без описания';
+    form.reset();
   }
 });
 
