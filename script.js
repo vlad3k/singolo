@@ -129,5 +129,46 @@ document.addEventListener('DOMContentLoaded', function(){
     images.forEach(image => image.classList.remove('gallery__image--active'));
     this.classList.add('gallery__image--active');
   }))
+
+  // Form modal
+  const form = document.querySelector('.section__form');
+  const modal = document.querySelector("#myModal");
+  const close = document.querySelector(".modal__close");
+  const modalSubject = document.querySelector('#subject');
+  const modalDescription = document.querySelector('#description');
+  const subject = form.subject;
+  const desc = form.description;
+
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (subject.value.trim() === '') {
+      modalSubject.innerHTML = 'Без темы';
+    } else {
+      modalSubject.innerHTML = `<div class="modal__title">Тема:</div> ${subject.value}`;
+    }
+    if (desc.value.trim() === '') {
+      modalDescription.innerHTML = 'Без описания';
+    } else {
+
+      modalDescription.innerHTML = `<div class="modal__title">Описание:</div> ${desc.value}`;
+    }
+    modal.style.display = 'block';
+  });
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+      modalSubject.innerHTML = 'Без темы';
+      modalDescription.innerHTML = 'Без описания';
+    }
+  }
+
+  close.onclick = function() {
+    modal.style.display = 'none';
+    modalSubject.innerHTML = 'Без темы';
+    modalDescription.innerHTML = 'Без описания';
+  }
 });
+
 

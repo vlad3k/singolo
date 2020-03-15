@@ -210,8 +210,8 @@
         <form class="section__form feedback">
           <input class="feedback__field" type="text" name="name" placeholder="Name (Required)" autocomplete="off" required>
           <input class="feedback__field" type="email" name="email" placeholder="Email (Required)" autocomplete="off" required>
-          <input class="feedback__field" type="text" placeholder="Subject" autocomplete="off">
-          <textarea class="feedback__field feedback__field--textarea" placeholder="Describe your project in detail..."></textarea>
+          <input class="feedback__field" type="text" name="subject" placeholder="Subject" autocomplete="off">
+          <textarea class="feedback__field feedback__field--textarea" name="description" placeholder="Describe your project in detail..."></textarea>
           <button class="btn" type="submit">Submit</button>
         </form>
         <aside class="setciton__form contacts">
@@ -254,6 +254,25 @@
       </div>
     </div>
   </footer>
+
+  <div id="myModal" class="modal">
+    <div class="modal__content">
+      <header class="modal__header">
+        <h2>Письмо отправлено</h2>
+      </header>
+      <div class="modal__body">
+        <ul class="modal__list">
+          <li id="subject">Без темы</li>
+          <li id="description">Без описания</li>
+          <li></li>
+        </ul>
+      </div>
+      <footer class="modal__footer">
+        <button class="btn modal__close">ОК</button>
+      </footer>
+    </div>
+
+  </div>
 </main>
 
 <script src="script.js"></script>
